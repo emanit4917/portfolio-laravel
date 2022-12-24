@@ -12,6 +12,8 @@ use App\Http\Controllers\backend\ProductController;
 
 use App\Http\Controllers\backend\AboutController;
 use App\Http\Controllers\backend\BlogpostController;
+use App\Http\Controllers\backend\ContactController;
+use App\Http\Controllers\backend\SocailinfoController;
 
 
 
@@ -105,8 +107,18 @@ Route::get('blog/create',[BlogpostController::class, 'creates'])->name('blog.cre
 Route::get('blog/delete/{id}',[BlogpostController::class, 'destroy'])->name('blog.delete');
 Route::get('blog/edit/{id}',[BlogpostController::class, 'edit'])->name('blog.edit');
 Route::post('blog/updated/{id}',[BlogpostController::class, 'updated'])->name('blog.updated');
+ 
+//__Contact page part Route __//
+Route::get('social',[SocailinfoController::class, 'index'])->name('social');
+Route::post('social/store',[SocailinfoController::class, 'socialstore'])->name('social.store');
+Route::get('social/create',[SocailinfoController::class, 'create'])->name('social.create');
+Route::get('contact/delete/{id}',[SocailinfoController::class, 'destroy'])->name('contact.delete');
 
-//__Category  Post part Route __//
+
+
+Route::post('contact/store',[ContactController::class, 'contactstore'])->name('contact.store');
+
+
 
 
 

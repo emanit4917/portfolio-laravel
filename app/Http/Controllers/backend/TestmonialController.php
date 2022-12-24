@@ -29,14 +29,14 @@ class TestmonialController extends Controller
            $photo_thum = $request->photo_thum;
            
            if($photo_thum){
-            $photo_path = $hero->photo_thum;
+            $photo_path = $testmonial_data->photo_thum;
             
              if (file_exists($photo_path)){
                 @unlink($photo_path);
             }
             
             $photoname =date('d-m-Y-H-i').'.'.$photo_thum->getClientOriginalExtension();
-            $path =('backend/testmonial'.$photoname);
+            $path =('backend/testmonial/'.$photoname);
            Image::make($photo_thum)->resize(70,70)->save($path);
            $testmonial_data ['photo_thum'] = $path;
          }
@@ -44,13 +44,13 @@ class TestmonialController extends Controller
            $photo = $request->photo;
 
              if($photo){
-                $photo_path = $hero->photo;
+                $photo_path = $testmonial_data->photo;
             
                 if (file_exists($photo_path)){
                    @unlink($photo_path);
                }
                   $photoname =date('d-m-Y-H-i').'.'.$photo->getClientOriginalExtension();
-                  $path =('backend/testmonial'.$photoname);
+                  $path =('backend/testmonial/'.$photoname);
                  Image::make($photo)->resize(356,420)->save($path);
                  $testmonial_data ['photo'] = $path;
               }
@@ -89,7 +89,7 @@ class TestmonialController extends Controller
                 @unlink($photo_path);
             }
             $photoname =date('d-m-Y-H-i').'.'.$photo_thum->getClientOriginalExtension();
-            $path =('backend/testmonial'.$photoname);
+            $path =('backend/testmonial/'.$photoname);
             Image::make($photo_thum)->resize(70,70)->save($path);
             $testmonial_update ['photo_thum'] = $path;
         }

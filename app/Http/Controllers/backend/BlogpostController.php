@@ -13,23 +13,24 @@ class BlogpostController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate([
-            'title'=> 'required',
-            'desc'=> 'required',
-            'read'=> 'required',
-            'post_date'=> 'required',
-            'parenting'=> 'required',
+        // dd($request->all());
+        // // $request->validate([
+        // //     'title'=> 'required',
+        // //     'desc'=> 'required',
+        // //     'read'=> 'required',
+        // //     'post_date'=> 'required',
+        // //     'parenting'=> 'required',
      
-            ]);
+        // //     ]);
     
         // database insert data
-           $blog_info = New BlogPost;
-           $blog_info->title = $request->title;
-           $blog_info->desc = $request->desc;
-           $blog_info->read = $request->read;
-           $blog_info->post_date = $request->post_date;
-           $blog_info->parenting = $request->parenting;
-           $blog_info->save();
+           $blog_data = New BlogPost;
+           $blog_data->title = $request->title;
+           $blog_data->desc = $request->desc;
+           $blog_data->read = $request->read;
+           $blog_data->post_date = $request->post_date;
+           $blog_data->parenting = $request->parenting;
+           $blog_data->save();
     
         return back()->with('success','Blog post item data insert successfully!');
     }

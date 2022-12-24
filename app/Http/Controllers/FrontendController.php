@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\backend\{Logo,Herosection,Brandlogo,Globals,Service,Testmonial,Product,About,BlogPost};
+use App\Models\backend\{Logo,Herosection,Brandlogo,Globals,Service,Testmonial,Product,About,
+    BlogPost,SocailInfo};
 
 use Illuminate\Http\Request;
 
@@ -37,7 +38,9 @@ class FrontendController extends Controller
         return view('frontend.pages.portfoliosingle',compact('logo_input'));
     }
     public function contact(){
+        $socail_all = SocailInfo::latest()->get();
+
         $logo_input = Logo::latest()->first();
-        return view('frontend.pages.contact',compact('logo_input'));
+        return view('frontend.pages.contact',compact('logo_input','socail_all'));
     }
 }

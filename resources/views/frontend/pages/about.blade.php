@@ -1,6 +1,5 @@
  @extends('frontend.layouts.master')
  @section('content')
-
  <!--================== About Section Start ==================-->
  <section class="about-hero hero-area section" >
     <div class="container">
@@ -147,5 +146,5 @@
   </section>
   <!--================== Blog-post Section End ==================-->
 
-       
+     
  @endsection

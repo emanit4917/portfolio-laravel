@@ -60,6 +60,7 @@ Route::get('brand',[BrandlogoController::class, 'index'])->name('brand');
 Route::post('brand/store',[BrandlogoController::class, 'store'])->name('brand.store');
 Route::get('brand/create',[BrandlogoController::class, 'create'])->name('brand.create');
 Route::get('brand/delete/{id}',[BrandlogoController::class, 'destroy'])->name('brand.delete');
+
 //__Global  section part Route __//
 
 Route::get('global/add',[GlobalController::class, 'index'])->name('global.add');
@@ -104,4 +105,8 @@ Route::get('blog/create',[BlogpostController::class, 'creates'])->name('blog.cre
 Route::get('blog/delete/{id}',[BlogpostController::class, 'destroy'])->name('blog.delete');
 Route::get('blog/edit/{id}',[BlogpostController::class, 'edit'])->name('blog.edit');
 Route::post('blog/updated/{id}',[BlogpostController::class, 'updated'])->name('blog.updated');
+
+//__Category  Post part Route __//
+
+
 

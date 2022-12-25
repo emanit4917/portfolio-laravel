@@ -72,6 +72,13 @@
             <li><a href="{{route('blog.create')}}">Blog View</a></li>
           </ul>
         </li>
+        
+        <li><a><i class="fa fa-clone"></i>Sigle Portfolio <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{{route('sigle.portfolio')}}">Sigle Portfolio Add</a></li>
+            <li><a href="{{route('sigle.create')}}">Sigle Portfolio View</a></li>
+          </ul>
+        </li>
         <li><a><i class="fa fa-windows"></i>Extras <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>

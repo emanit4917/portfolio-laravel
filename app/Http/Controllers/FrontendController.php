@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\backend\{Logo,Herosection,Brandlogo,Globals,Service,Testmonial,Product,About,
-    BlogPost,SocailInfo};
+    BlogPost,SocailInfo,SinglePortfolio};
 
 use Illuminate\Http\Request;
 
@@ -35,7 +35,8 @@ class FrontendController extends Controller
     }
     public function single(){
         $logo_input = Logo::latest()->first();
-        return view('frontend.pages.portfoliosingle',compact('logo_input'));
+        $single_port_show = SinglePortfolio::all()->first();
+        return view('frontend.pages.portfoliosingle',compact('logo_input','single_port_show'));
     }
     public function contact(){
         $socail_all = SocailInfo::latest()->get();

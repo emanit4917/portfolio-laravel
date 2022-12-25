@@ -253,7 +253,7 @@
             <img class="img-fluid" src="{{asset($pro_row->pro_photo)}}" alt="img">
             <div class="card-img-overlay">
               <div class="card-body">
-                <a href="portfolio-single.html" class="h4 text-white">{{$pro_row->pro_title}}</a>
+                <a href="" class="h4 text-white">{{$pro_row->pro_title}}</a>
                 <ul class="meta-list list-unstyled d-flex">
                   <li class="list-inline-item text-white fw-normal">{{$pro_row->digital}}</li>
                   <li class="list-inline-item text-white fw-normal">{{$pro_row->brand_name}}</li>

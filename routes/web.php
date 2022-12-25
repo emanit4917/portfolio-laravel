@@ -14,6 +14,7 @@ use App\Http\Controllers\backend\AboutController;
 use App\Http\Controllers\backend\BlogpostController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\SocailinfoController;
+use App\Http\Controllers\backend\SinglePortfolioController;
 
 
 
@@ -108,15 +109,23 @@ Route::get('blog/delete/{id}',[BlogpostController::class, 'destroy'])->name('blo
 Route::get('blog/edit/{id}',[BlogpostController::class, 'edit'])->name('blog.edit');
 Route::post('blog/updated/{id}',[BlogpostController::class, 'updated'])->name('blog.updated');
  
-//__Contact page part Route __//
+//__Socail page part Route __//
 Route::get('social',[SocailinfoController::class, 'index'])->name('social');
 Route::post('social/store',[SocailinfoController::class, 'socialstore'])->name('social.store');
 Route::get('social/create',[SocailinfoController::class, 'create'])->name('social.create');
 Route::get('contact/delete/{id}',[SocailinfoController::class, 'destroy'])->name('contact.delete');
 
-
-
+//__Contact page part Route __//
 Route::post('contact/store',[ContactController::class, 'contactstore'])->name('contact.store');
+
+//__Single Portfolio page  Route __//
+Route::get('sigle/portfolio',[SinglePortfolioController::class, 'index'])->name('sigle.portfolio');
+Route::post('single/store',[SinglePortfolioController::class, 'store'])->name('single.store');
+Route::get('sigle/create',[SinglePortfolioController::class, 'create'])->name('sigle.create');
+Route::get('single_port/delete/{id}',[SinglePortfolioController::class, 'destroy'])->name('single_port.delete');
+Route::get('single_port/edit/{id}',[SinglePortfolioController::class, 'edit'])->name('single_port.edit');
+Route::post('single/updated/{id}',[SinglePortfolioController::class, 'updated'])->name('single.updated');
+
 
 
 

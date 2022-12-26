@@ -20,6 +20,33 @@
                                 @enderror
                          </div>
                         <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Description</label>
+                             <input type="text" name="description" class="form-control @error('description') is-invalid @enderror"  placeholder="Write your description here">
+                             @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Technolgy</label>
+                             <input type="text" name="technolgy" class="form-control @error('technolgy') is-invalid @enderror"  placeholder="Write your technolgy here">
+                             @error('technolgy')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Category</label>
+                             <input type="text" name="category" class="form-control @error('category') is-invalid @enderror"  placeholder="Write your technolgy here">
+                             @error('category')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
                              <label for="exampleFormControlInput1" class="form-label">Digital Brand</label>
                              <input type="text"  name="digital" class="form-control @error('digital') is-invalid @enderror" placeholder="write digital ">
                              @error('digital')

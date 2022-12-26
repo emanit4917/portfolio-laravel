@@ -16,6 +16,9 @@ class ProductController extends Controller
     public function store(Request $request){
         $request->validate([
             'pro_title'=> 'required',
+            'description'=> 'required',
+            'technolgy'=> 'required',
+            'category'=> 'required',
             'digital'=> 'required',
             'brand_name'=> 'required',
             'pro_photo'=> 'required',
@@ -24,6 +27,9 @@ class ProductController extends Controller
 
         $product_data = new Product;
         $product_data->pro_title = $request->pro_title;
+        $product_data->description = $request->description;
+        $product_data->technolgy = $request->technolgy;
+        $product_data->category = $request->category;
         $product_data->digital = $request->digital;
         $product_data->brand_name = $request->brand_name;
         $pro_photo = $request->pro_photo;
@@ -57,6 +63,9 @@ class ProductController extends Controller
     public function updated(Request $request, $id){
         $product_info = Product::find($id);
         $product_info->pro_title = $request->pro_title;
+        $product_info->description = $request->description;
+        $product_info->technolgy = $request->technolgy;
+        $product_info->category = $request->category;
         $product_info->digital = $request->digital;
         $product_info->brand_name = $request->brand_name;
         $pro_photo = $request->pro_photo;
@@ -70,7 +79,7 @@ class ProductController extends Controller
             $photoname =date('d-m-Y-H-i').'.'.$pro_photo->getClientOriginalExtension();
             $path =('backend/product/'.$photoname);
 
-           Image::make($pro_photo)->resize(130,130)->save($path);
+           Image::make($pro_photo)->resize(535,534)->save($path);
            $product_info ['pro_photo'] = $path;
         }
 

@@ -41,6 +41,7 @@ Route::get('about/',[FrontendController::class, 'about'])->name('about');
 Route::get('portfolio/',[FrontendController::class, 'portfolio'])->name('portfolio');
 Route::get('portfolio/single/',[FrontendController::class, 'single'])->name('portfoliosingle');
 Route::get('contact/',[FrontendController::class, 'contact'])->name('contact');
+Route::get('product/single/{id}',[FrontendController::class, 'productsingle'])->name('product.single');
 
 //__Frontent logo part Route __//
 Route::get('logo/',[LogoController::class, 'index'])->name('logo');
@@ -93,6 +94,7 @@ Route::post('product/store',[ProductController::class, 'store'])->name('product.
 Route::get('product/create',[ProductController::class, 'create'])->name('product.create');
 Route::get('product/delete/{id}',[ProductController::class, 'destroy'])->name('product.delete');
 Route::get('product/edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
+Route::post('product/updated/{id}',[ProductController::class, 'updated'])->name('product.updated');
 Route::post('product/updated/{id}',[ProductController::class, 'updated'])->name('product.updated');
 
 //__About section part Route __//

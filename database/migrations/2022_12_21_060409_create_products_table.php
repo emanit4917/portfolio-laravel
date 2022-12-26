@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('pro_title');
+            $table->string('description');
+            $table->string('technolgy');
+            $table->string('category');
             $table->string('digital');
             $table->string('brand_name');
             $table->string('pro_photo');

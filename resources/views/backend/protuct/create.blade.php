@@ -12,10 +12,13 @@
                 <thead>
                     <tr>
                         <th scope="col">SL</th>
-                        <th scope="col">Pro_title</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Technolgy</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Digital</th>
                         <th scope="col">Brand_name</th>
-                        <th scope="col">Pro_photo</th>
+                        <th scope="col">Photo</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -24,9 +27,14 @@
                     <tr>
                         <th scope="row">{{++$key}}</th>
                         <td>{{$rows->pro_title}}</td>
+                        <td>{{$rows->description}}</td>
+                        <td>{{$rows->technolgy}}</td>
+                        <td>{{$rows->category}}</td>
                         <td>{{$rows->digital}}</td>
                         <td>{{$rows->brand_name}}</td>
-                        <td>{{$rows->pro_photo}}</td>
+                        <td>
+                            <img src="{{asset($rows->pro_photo)}}" width="90" height="80" alt="">
+                        </td>
                         <td>
                             <a href="{{route('product.edit', $rows->id)}}" class="btn btn-info">Edit</a>
                             <a href="{{route('product.delete', $rows->id)}}" class="btn btn-danger">Delete</a>
@@ -59,7 +67,7 @@
 
             Toast.fire({
             icon: 'success',
-            title: '{{session('success')}}',
+            title: '{{session('del')}}',
             })
         </script>
     @endif

@@ -20,6 +20,33 @@
                                 @enderror
                          </div>
                         <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Description</label>
+                             <input type="text" name="description" value="{{$product_show->description}}" class="form-control @error('pro_title') is-invalid @enderror"  placeholder="Write your description here">
+                             @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Technolgy</label>
+                             <input type="text" name="technolgy" value="{{$product_show->technolgy}}" class="form-control @error('technolgy') is-invalid @enderror"  placeholder="Write your technolgy here">
+                             @error('technolgy')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
+                             <label for="exampleFormControlInput1" class="form-label">Product Category</label>
+                             <input type="text" name="category" value="{{$product_show->category}}" class="form-control @error('category') is-invalid @enderror"  placeholder="Write your category here">
+                             @error('category')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                         </div>
+                        <div class="mb-3">
                              <label for="exampleFormControlInput1" class="form-label">Digital Brand</label>
                              <input type="text" name="digital" value="{{$product_show->digital}}" class="form-control @error('digital') is-invalid @enderror" placeholder="write digital ">
                              @error('digital')

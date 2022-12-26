@@ -44,4 +44,10 @@ class FrontendController extends Controller
         $logo_input = Logo::latest()->first();
         return view('frontend.pages.contact',compact('logo_input','socail_all'));
     }
+    public function productsingle($id){
+        $product = Product::find($id);
+        $logo_input = Logo::latest()->first();
+        return view('frontend.pages.single_product',compact('product','logo_input'));
+    }
+
 }
